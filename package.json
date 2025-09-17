@@ -1,12 +1,13 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
+    "name": "@modules/module",
     "private": true,
     "type": "module",
     "scripts": {
         "build": "vite build",
         "dev": "vite"
     },
-    "devDependencies": {
+    "dependencies": {
         "@tailwindcss/vite": "^4.0.0",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",

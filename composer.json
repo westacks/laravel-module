@@ -21,9 +21,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Module\\": "src/",
+            "Module\\Database\\Factories\\": "database/factories/",
+            "Module\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
@@ -58,7 +58,10 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "Module\\Providers\\ModuleServiceProvider"
+            ]
         }
     },
     "config": {
