@@ -28,6 +28,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "WeStacks\\LaravelModule\\Scripts\\": ".module/scripts/",
             "Tests\\": "tests/"
         }
     },
@@ -43,6 +44,8 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
+            "WeStacks\\LaravelModule\\Scripts\\Installer::postCreateProject",
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"

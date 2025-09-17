@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Module\Providers\ModuleServiceProvider;
 
 $module = dirname(__DIR__);
 
@@ -17,7 +18,7 @@ return Application::configure(basePath: dirname($module))
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })
-    ->withProviders([Module\Providers\ModuleServiceProvider::class], false)
+    ->withProviders([ModuleServiceProvider::class], false)
     ->create()
     ->useConfigPath($module.'/config')
     ->useBootstrapPath(__DIR__)
