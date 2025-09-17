@@ -8,6 +8,6 @@ abstract class Model extends BaseModel
 {
     public function getTable(): string
     {
-        return config('module.table_prefix') . parent::getTable();
+        return config('module.table_prefix').parent::getTable();
     }
 }

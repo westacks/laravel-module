@@ -41,7 +41,7 @@ class ModuleServiceProvider extends ServiceProvider
     {
         $commands = collect([
             __DIR__.'/../../routes/console.php',
-            __DIR__.'/../Console/Commands'
+            __DIR__.'/../Console/Commands',
         ]);
 
         [$commands, $paths] = $commands->partition(fn ($command) => class_exists($command));
