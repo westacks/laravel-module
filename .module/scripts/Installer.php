@@ -39,7 +39,7 @@ class Installer
             "Tests\\" => 'tests/',
         ];
 
-        $composer['extra']['laravel']['providers'] = ["{$studly}\\ModuleServiceProvider"];
+        $composer['extra']['laravel']['providers'] = ["{$studly}\\Providers\\ModuleServiceProvider"];
 
         $composer['name'] = "modules/{$slug}";
 
@@ -154,7 +154,7 @@ class Installer
         $content = file_get_contents($file->getPathname());
         $content = str_replace('namespace Module', "namespace {$namespace}", $content);
         $content = str_replace('use Module', "use {$namespace}", $content);
-        $content = str_replace('laravel-module::', "$slug::", $content);
+        $content = str_replace('module::', "$slug::", $content);
 
         file_put_contents($file->getPathname(), $content);
     }
